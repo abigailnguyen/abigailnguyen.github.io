@@ -1,11 +1,10 @@
 ---
 layout: post
 title: "UTCOFFSET"
-date: 2024-01-01 00:00:00
-categories: TYPESCRIPT CODE_SNIPPET
 ---
-# Get the UTC time offset using standard Date library
-```js
+
+# Get the UTC offset using the standard Date library
+``` js
 const TIMEZONE = 'Australia/Melbourne'
 function getTimezone(date: string): number {
   const d = new Date(date);
