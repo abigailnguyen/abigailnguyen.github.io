@@ -1,5 +1,5 @@
 layout: post
-title: "Get the utcOffset"
+title: "GET-UTC-OFFSET"
 date: 2024-01-05 10:00:00 -0000
 categories: TYPESCRIPT CODE_SNIPPET
 ----------------------
