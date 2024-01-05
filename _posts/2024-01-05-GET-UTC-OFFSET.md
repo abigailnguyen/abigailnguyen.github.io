@@ -1,8 +1,9 @@
+---
 layout: post
 title: "GET-UTC-OFFSET"
 date: 2024-01-05 10:00:00 -0000
 categories: TYPESCRIPT CODE_SNIPPET
-----------------------
+---
 
 # Get the UTC time offset using standard Date library
 ```js
