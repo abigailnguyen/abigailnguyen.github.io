@@ -1,3 +1,9 @@
+---
+layout: post
+title: "BIGQUERY PARTITIONED TABLES"
+---
+
+
 ## Bigquery partitioning tables:
 ```sql
 SELECT * FROM `PROJECT_ID.DATASET.TABLE_NAME` WHERE TIMESTAMP_TRUNC(time_range_start, MONTH) = TIMESTAMP("2024-05-01") LIMIT 1000
