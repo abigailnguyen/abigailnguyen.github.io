@@ -2,7 +2,6 @@
 layout: post
 title: "BIGQUERY-PARTITIONED-TABLES"
 date: 2024-06-13 19:30:00 +1000
-permalink: /BIGQUERY
 ---
 
 
