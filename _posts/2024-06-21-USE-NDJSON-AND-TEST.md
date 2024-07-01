@@ -25,5 +25,74 @@ for await (const obj of readStream) {
 }
 ```
 
-## To write to
+## To write to file with JSONL
+```javascript
+type SLAResponse = {
+  environments: {
+    name: string;
+    dimensions: {
+      name: string;
+      metrics: {
+        name: string;
+        values: string[];
+      }[];
+      individualNames: string[];
+    }[];
+  }[];
+  metaData?: {
+    notices: string[];
+  };
+};
+
+export async function extractStatsAPIResponseToNLJSON(
+  statsData: SLAResponse,
+  timeRangeEnd: string,
+  dimensions: string[],
+  timeRangeStart: string,
+  writeToStream?: any,
+) {
+  const stream = ndjson.stringify();
+  const pass = new PassThrough();
+
+  stream.on('data', function (line: any) {
+    pass.write(line);
+    writeToStream?.write(line);
+  });
+  // handle stream error
+  stream.on('error', (err) => console.error(err));
+
+  const data = statsData.environments[0];
+  data.dimensions.forEach((record) => {
+    const tableValues = {};
+    dimensions.forEach(
+      (di, idx) => (tableValues[di] = record.individualNames[idx]),
+    );
+    const stats = record.metrics
+      .map((metric) => ({
+        name: metric.name,
+        value: metric.values?.[0],
+      }))
+      .filter((record) => record.value !== undefined && record.value !== null);
+
+    if (stats.length === 0) {
+      return;
+    }
+    const metricRec = {
+      time_range_start: timeRangeStart,
+      time_range_end: timeRangeEnd,
+      ...tableValues,
+      stats,
+    };
+    stream.write(metricRec);
+  });
+
+  stream.on
+  stream.end(() => {
+    pass.end();
+    writeToStream?.end();
+  });
+
+  return pass;
+}
+```
 
