@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Useful Bash command"
-date: 2024-06-21 23:45:00 +1000
+date: 2024-06-29 23:45:00 +1000
 ---
 
 # Package:
