@@ -9,7 +9,7 @@ NDJON is a type of format for Newline delimited JSON, that is useful to save a l
 In typescript and Javascript world, we use this package to enable parse and create NDJSON files: https://www.npmjs.com/package/ndjson
 
 ## To read from a JSONL file
-```javascript
+```ts
 import * as ndjson from 'ndjson';
 import { createWriteStream, createReadStream, promises } from 'fs';
 
@@ -26,7 +26,7 @@ for await (const obj of readStream) {
 ```
 
 ## To write to file with JSONL
-```javascript
+```ts
 type SLAResponse = {
   environments: {
     name: string;

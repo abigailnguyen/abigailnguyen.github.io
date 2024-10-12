@@ -4,7 +4,7 @@ title: "UTCOFFSET"
 ---
 
 # Get the UTC offset using the standard Date library
-``` js
+```js
 const TIMEZONE = 'Australia/Melbourne'
 function getTimezone(date: string): number {
   const d = new Date(date);

@@ -4,6 +4,9 @@ title: "DOCKER HELP"
 ---
 
 # Setup Docker ECR Login
+
+Reference for installing [Amazon ECR Credential helper](https://github.com/awslabs/amazon-ecr-credential-helper?tab=readme-ov-file#mac-os)
+
 ```sh
 alias dockercred=vi ~/docker/config.json
 ```
