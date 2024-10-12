@@ -20,7 +20,7 @@ date: 2024-06-29 23:45:00 +1000
 * `/s` find the pattern 
 
 
-# Command:
+# Commands:
 
 ### Find all node_modules and remove them from a directory
 This is useful to remove the node_modules from all the sub directories
@@ -52,4 +52,10 @@ gh repo list <space> --limit 1000 --json sshUrl | jq '.[].sshUrl' | xargs -L1 -I
 ### Kill the process running on a port
 ```sh
 lsof -t -i:port | xargs kill
+```
+
+## List bash history
+```sh
+ls ~/.bash_history
+ls ~/.zsh_history
 ```
